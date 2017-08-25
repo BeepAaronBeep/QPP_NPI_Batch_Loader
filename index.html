@@ -1,0 +1,101 @@
+<html>
+<head>
+  <title>QPP NPI Data</title>
+  <link rel="stylesheet" type="text/css" href="./mini-lite.css">
+
+  <style>
+    .npi-input{
+       resize: none
+    }
+
+    #loading-spinner{
+      height: 40px;
+      width: 40px;
+      vertical-align : middle;
+      visibility: hidden;
+    }
+
+    .err-message {
+      color: red;
+    }
+
+    #error-count {
+      color: red;
+    }
+
+    .results-container{
+      overflow: auto;
+    }
+
+    #results-table {
+      margin-left: 5px;
+      max-width: 80%;
+    }
+
+
+    /*table th, table td {
+    padding: .625rem;
+    border-left: .0625rem solid white;
+    border-top: .0625rem solid white;
+    }*/
+
+    #loading-count {
+      visibility: hidden;
+    }
+
+  </style>
+</head>
+<body>
+  <div>
+     <h1>QPP NPI Data Quick Lookup Tool</h1>
+  </div>
+  <div>
+    <p>
+      <sp>Enter NPIs below, one number per row:</sp>
+      <br>
+      <textarea rows="4" cols="50" class="npi-input-list" id='npi-list'></textarea>
+      <br>
+      <br>
+      <span>NOTE: Refresh the page before each query to reset the results table! </span>
+      <div class="loading-button-div">
+        <button type="button" id="btn-load">Load Provider Data</button>
+        <span id = "loading-count">Loading <span id="loaded-count"></span> of <span id="total-count"></span>...</span>
+        <img src="./Spinner.gif" id="loading-spinner">
+      </div>
+    </p>
+  <div>
+  <div id="results-container">
+    <h3>Results<span style="margin-left: 10px; hidden = true;" id="error-count"></span></h3>
+      <div id='table-container'>
+        <table id='results-table'>
+          <tr>
+            <th>NPI</th>
+            <th>Name (Last, First M)</th>
+            <th>Proivder Type</th>
+            <th>Associated TINs</th>
+            <th>Enrolled in Medicare Before Jan-1-2017</th>
+            <th>Practice Details</th>
+            <th>Mips Eligibility individual</th>
+            <th>Mips Eligibility Group</th>
+            <th>Individual - Non-Patient Facing</th>
+            <th>Individual - Hospital Based</th>
+            <th>Individual - Small Practice</th>
+            <th>Individual - Rural</th>
+            <th>Individual - HPSA</th>
+            <th>Group - Non-Patient Facing</th>
+            <th>Group - Hospital Based</th>
+            <th>Group - Small Practice</th>
+            <th>Group - Rural</th>
+            <th>Group - HPSA</th>
+          </tr>
+        </table>
+        <br>
+        <span>*Individual = Clinician at This practice</span>
+        <br>
+        <span>*Group = For This practice</span>
+      </div>
+  </div>
+
+  <script src="./script.js"></script>
+</body>
+</html>
