@@ -4,24 +4,13 @@
 // This script is used to gather specific information from
 // the qpp.cms.gov website.
 
-
-// Notes //
-
-// The json object has a list of organizations - this may be what creates the counts
-// for TINs.
-
-
-// TODO: Add reset button.
-// TODO: Change colors.
-
-// test vars
 var testJSON;
 var errorCount = 0;
 // Define our functions
 var createNPIArray = function(){
     var npiText = document.getElementById('npi-list').value;
-    npiText = npiText.replace(/\s*$/,"");
-    npiText = npiText.replace(/[\n\r]/g, ',').trim();
+    npiText = npiText.replace(/[\n\r]/g, ',');
+	npiText = npiText.replace(/\s+/g, '');
     var npiArray = npiText.split(',');
     console.log(npiArray);
     return npiArray;
@@ -135,7 +124,13 @@ var addRow = function(jsonObject){
       providerTINsCell.appendChild(providerTINsText);
 
       var providerEnrolledCell = newRow.insertCell(4);
-      var providerEnrolledText = document.createTextNode('???');
+	  var pecosEnrolledDate = jsonObject.data.pecosEnrollmentDate;
+	  if (pecosEnrolledDate < 2017){
+		  pecosEnrolledDateValue = 'true';
+	  } else {
+		  pecosEnrolledDateValue = 'false';
+	  }
+      var providerEnrolledText = document.createTextNode(pecosEnrolledDateValue);
       providerEnrolledCell.appendChild(providerEnrolledText);
 
       var providerPracticeDetailsCell = newRow.insertCell(5);

@@ -1,0 +1,53 @@
+.npi-input{
+   resize: none
+}
+
+body {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  background: #ECEFF1;
+  
+}
+
+#loading-spinner{
+  height: 40px;
+  width: 40px;
+  vertical-align : middle;
+  visibility: hidden;
+}
+
+.err-message {
+  color: red;
+}
+
+#error-count {
+  color: red;
+}
+
+.results-container{
+  overflow: auto;
+}
+
+#loading-count {
+  visibility: hidden;
+}
+
+#results-table {
+	border-collapse: collapse;
+}
+
+#results-table tr:nth-child(even){background-color: #f2f2f2; border: 2px solid #212121;}
+
+#results-table tr:hover {background-color: #ddd; border: 2px solid #212121;}
+
+#results-table th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: center;
+    background-color: #607D8B;
+    color: white;
+	border: 2px solid #212121;
+}
+
+#results-table td {
+	border: 2px solid #212121;
+}
