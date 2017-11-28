@@ -160,7 +160,7 @@ var addRow = function(jsonObject){
       providerIndHospitalBasedCell.appendChild(providerIndHospitalBasedText);
 
       var providerIndSmallPracticeCell = newRow.insertCell(10);
-      var providerIndSmallPracticeText = document.createTextNode(jsonObject.data.organizations[i].individualScenario.smallGroupPractioner);
+      var providerIndSmallPracticeText = document.createTextNode(jsonObject.data.organizations[i].individualScenario.smallGroupPractitioner);
       providerIndSmallPracticeCell.appendChild(providerIndSmallPracticeText);
 
       var providerIndRuralCell = newRow.insertCell(11);
@@ -180,7 +180,7 @@ var addRow = function(jsonObject){
       providerGrpHospitalBasedCell.appendChild(providerGrpHospitalBasedText);
 
       var providerGrpSmallPracticeCell = newRow.insertCell(15);
-      var providerGrpSmallPracticeText = document.createTextNode(jsonObject.data.organizations[i].groupScenario.smallGroupPractioner);
+      var providerGrpSmallPracticeText = document.createTextNode(jsonObject.data.organizations[i].groupScenario.smallGroupPractitioner);
       providerGrpSmallPracticeCell.appendChild(providerGrpSmallPracticeText);
 
       var providerGrpRuralCell = newRow.insertCell(16);
